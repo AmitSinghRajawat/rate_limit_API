@@ -1,21 +1,24 @@
-Installation requirements:
+# Rate limit API
+
+### Installation requirements:
 1. Install pip
 2. Install flask
 
-Run the application:
-1. python $PATH/rate_limit_API/api_handler.py
-2. Open http://localhost:5000/
+### Run the application:
+1. python $PATH/rate_limit_API/api_handler.py   ```(from CLI)```
+2. Open http://localhost:5000/  ```(in browser)```
 
-API endpoints:
+### API endpoints:
 
-URL: https://localhost:5000/getCityHotels
-Request Type: POST
-Body: 
+#### endpoint: ```https://localhost:5000/getCityHotels```
+#### Request Type: POST
+##### Body: 
 	{"city_id":"Ashburn",
 	"sort_type":0,
 	"api_key":"gethotels1234"}
 
-Response:
+##### Response:
+```
 [
    {
       "CITY":"Ashburn",
@@ -96,10 +99,13 @@ Response:
       "ROOM":"Superior"
    }
 ]
+```
 
-city_id can be : Name of city present in CSV file
-sort_type can be: 0 for descending and 1 for ascending order of price in CSV file
+###### city_id: ```Name of city present in CSV file```
+###### sort_type: ```0 for descending and 1 for ascending order of price in CSV file```
 
-Permissible API keys:
+#### Permissible API keys:
+```
 1. 'gethotels1234'   (rate limit: 1 request in 20 seconds)
 2. 'gethotels7890'   (rate limit: 1 request in 15 seconds)
+```
